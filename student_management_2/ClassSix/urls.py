@@ -10,7 +10,9 @@ urlpatterns = [
     path ('student/login/',views.StudentLogin, name='StudentLogin'),
     path ('student/logout/',views.StudentLogOut, name='StudentLogOut'),
     path ('student/dashbord/',views.StudentDashbord, name='ClassSixStudentDashbord'),
-    
+    path ('student/marksheet/',views.student_marksheet, name='marksheet'),
+
+
     
     path ('teacher/Join/',views.TeaccherReg, name='TeacherRegSIX'),
     path ('teacher/login/',views.TeacherLogin, name='TeacherLoginSIX'),

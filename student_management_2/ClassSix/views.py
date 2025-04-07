@@ -46,6 +46,22 @@ def StudentLogin(request):
             err = "Student Id not exsits"
             return render(request, 'Studentlogin.html', {'err':err}) 
     return render(request, 'Studentlogin.html')
+
+from django.shortcuts import render, get_object_or_404
+
+def student_marksheet(request):
+    if request.method == 'POST':
+        studentID = request.POST.get('StudentId')
+        try:
+            student = ClassSIXResult.objects.get(student_id=studentID)
+            context = {'student': student}
+            return render(request, 'marksheet.html', context)
+        except ClassSIXResult.DoesNotExist:
+            err = "Student ID not found"
+            return render(request, 'marksheetForm.html', {'err': err})
+
+    return render(request, 'marksheetForm.html')
+
     
 
 def StudentLogOut(request):
