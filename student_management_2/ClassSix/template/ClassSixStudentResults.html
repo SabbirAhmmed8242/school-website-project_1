@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Result Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f7;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Result Table</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Roll</th>
+        <th>Student ID</th>
+        <th>Total</th>
+        <th>Avarage</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for result in results %}
+        <tr>
+            <td class="highlight">{{result.name}}</td>
+            <td>{{result.roll}}</td>
+            <td>{{result.student_id}}</td>
+            <td>{{result.total}}</td>
+            <td>{{result.avarage}}</td>
+        </tr>
+        {% endfor %}
+      
+    </tbody>
+  </table>
+
+</body>
+</html>

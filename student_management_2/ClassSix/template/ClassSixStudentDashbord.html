@@ -3,6 +3,8 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
+<style>
+</style>
 <div class="container mt-5">
     <h2 class="text-center mb-4">Student Menu</h2>
 
@@ -13,7 +15,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">View Result</h5>
                     <p class="card-text">Check your exam results here.</p>
-                    <a href="" class="btn btn-primary">View Result</a>
+                    <a href="{% url 'AllResultSix' %}" class="btn btn-primary">View Result</a>
                 </div>
             </div>
         </div>
@@ -35,7 +37,16 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">Logout</h5>
                     <p class="card-text">Log out from your student account.</p>
-                    <a href="" class="btn btn-danger">Logout</a>
+                    <a href="{% url 'StudentLogOut' %}" class="btn btn-danger">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Home Page</h5>
+                    <p class="card-text">Go to home page.</p>
+                    <a href="home" class="btn btn-danger">home</a>
                 </div>
             </div>
         </div>

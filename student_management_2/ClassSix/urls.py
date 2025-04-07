@@ -11,6 +11,7 @@ urlpatterns = [
     path ('student/logout/',views.StudentLogOut, name='StudentLogOut'),
     path ('student/dashbord/',views.StudentDashbord, name='ClassSixStudentDashbord'),
     path ('student/marksheet/',views.student_marksheet, name='marksheet'),
+    path ('student/viewResult/',views.ClassSixStudentResultView, name='AllResultSix'),
 
 
     

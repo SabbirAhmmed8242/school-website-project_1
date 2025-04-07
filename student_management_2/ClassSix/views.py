@@ -62,6 +62,10 @@ def student_marksheet(request):
 
     return render(request, 'marksheetForm.html')
 
+
+def ClassSixStudentResultView(request):
+    results = ClassSIXResult.objects.all()
+    return render(request, 'ClassSixStudentResults.html', {'results':results})
     
 
 def StudentLogOut(request):
