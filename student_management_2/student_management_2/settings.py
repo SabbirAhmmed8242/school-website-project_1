@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ClassSix',
+    'ClassSeven',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'template'),
-                 os.path.join(BASE_DIR, 'ClassSix/template')],
+                 os.path.join(BASE_DIR, 'ClassSix/template'),
+                 os.path.join(BASE_DIR, 'ClassSeven/template')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
