@@ -1,6 +1,7 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect , get_object_or_404
 from . models import SixStudentID, ClassSIXResult , ClassSixTeachers
 from django.contrib.auth.hashers import make_password , check_password
+from django.views.decorators.cache import never_cache
 
 def classSIx(request):
     return render(request, 'ClassSixHomePage.html')
@@ -47,8 +48,23 @@ def StudentLogin(request):
             return render(request, 'Studentlogin.html', {'err':err}) 
     return render(request, 'Studentlogin.html')
 
-from django.shortcuts import render, get_object_or_404
+def ClassSixAllStudent(request):
+    return render(request, 'classSixAllStudent.html')
 
+def ClassSixDeleteStudent(request , StudentID):
+    if 'teacher_id' not in request.session:
+        return redirect('TeacherLoginSIX')
+    
+    student = SixStudentID.objects.get(id = StudentID)
+    student.delete()
+    return redirect('ClassSixTeacgerDashbord')
+
+def AllClassSixStudent(request):
+    student = SixStudentID.objects.all()
+    return render(request, 'classSixAllStudent.html',{'student':student})
+
+
+@never_cache
 def student_marksheet(request):
     if request.method == 'POST':
         studentID = request.POST.get('StudentId')
@@ -59,7 +75,6 @@ def student_marksheet(request):
         except ClassSIXResult.DoesNotExist:
             err = "Student ID not found"
             return render(request, 'marksheetForm.html', {'err': err})
-
     return render(request, 'marksheetForm.html')
 
 
@@ -71,12 +86,16 @@ def ClassSixStudentResultView(request):
 def StudentLogOut(request):
     try: 
         del request.session['student_id']
+        return redirect('StudentLogin')
     except TypeError:
         pass
     return redirect('StudentLogin')
 
 
+@never_cache
 def StudentDashbord(request):
+    if 'student_id' not in request.session:
+        return redirect('StudentLogin')
     return render(request, 'ClassSixStudentDashbord.html')
 
     
@@ -122,7 +141,11 @@ def TeacherLogin(request):
             return render(request , 'Teacherlogin.html',{'err':err})
     return render(request, 'Teacherlogin.html')
 
+
+@never_cache
 def ClassSixTeacgerDashbord(request):
+    if 'teacher_id' not in request.session:
+        return redirect('TeacherLoginSIX')
     return render(request, 'ClassSixTeacgerDashbord.html')
 
 

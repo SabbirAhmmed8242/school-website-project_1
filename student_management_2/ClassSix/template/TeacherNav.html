@@ -13,7 +13,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'ClassSixTeacgerDashbord' %}">Teacher panel</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Teacher panel</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,13 +28,13 @@
                 <a class="nav-link" href="{% url 'Addresult' %}">Add Result</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">View Result</a>
+                <a class="nav-link" href="{% url 'AllResultSix' %}">View Result</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">Add Student</a>
+                <a class="nav-link" href="{% url 'StudentReg' %}">Add Student</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">Delete Student</a>
+                <a class="nav-link" href="{% url 'ClassSixStudents' %}">Delete Student</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-danger" href="{% url 'TeacherLogOut' %}">Logout</a>
@@ -42,6 +42,9 @@
             {% else %}
               <li class="nav-item">
                 <a class="nav-link text-success" href="{% url 'TeacherLoginSIX' %}">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-success" href="{% url 'TeacherRegSIX' %}">Join</a>
               </li>
             {% endif %}
           </ul>

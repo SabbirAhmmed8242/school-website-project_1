@@ -11,10 +11,11 @@ urlpatterns = [
     path ('student/logout/',views.StudentLogOut, name='StudentLogOut'),
     path ('student/dashbord/',views.StudentDashbord, name='ClassSixStudentDashbord'),
     path ('student/marksheet/',views.student_marksheet, name='marksheet'),
+    path ('student/student-list-delete/',views.AllClassSixStudent, name='ClassSixStudents'),
     path ('student/viewResult/',views.ClassSixStudentResultView, name='AllResultSix'),
-
-
     
+
+    path ('teacher/delete-student/<int:StudentID>',views.ClassSixDeleteStudent , name='StudentDelete'),
     path ('teacher/Join/',views.TeaccherReg, name='TeacherRegSIX'),
     path ('teacher/login/',views.TeacherLogin, name='TeacherLoginSIX'),
     path ('teacher/logout/',views.TeacherLogOut, name='TeacherLogOut'),
