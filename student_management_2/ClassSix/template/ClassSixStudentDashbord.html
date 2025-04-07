@@ -1,0 +1,44 @@
+{% extends "StudentNav.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Student Menu</h2>
+
+    <div class="row">
+        <!-- View Result Card -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">View Result</h5>
+                    <p class="card-text">Check your exam results here.</p>
+                    <a href="" class="btn btn-primary">View Result</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marksheet Info Card -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Marksheet Info</h5>
+                    <p class="card-text">View your marksheet details.</p>
+                    <a href="" class="btn btn-primary">View Marks</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logout Card -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Logout</h5>
+                    <p class="card-text">Log out from your student account.</p>
+                    <a href="" class="btn btn-danger">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

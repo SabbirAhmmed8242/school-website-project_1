@@ -1,0 +1,82 @@
+{% extends "TeacherNav.html" %}
+{% block title %}Add Student Result{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h3 class="text-center mb-4">Add Student Result</h3>
+
+            {% if succes %}
+                <div class="alert alert-success text-center">{{ succes }}</div>
+            {% endif %}
+
+            {% if err %}
+                <div class="alert alert-danger text-center">{{ err }}</div>
+            {% endif %}
+
+            <form method="POST" action="">
+                {% csrf_token %}
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Student Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="roll" class="form-label">Roll</label>
+                        <input type="number" class="form-control" id="roll" name="roll" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="FatherName" class="form-label">Father's Name</label>
+                        <input type="text" class="form-control" id="FatherName" name="FatherName" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="StudentId" class="form-label">Student ID</label>
+                        <input type="number" class="form-control" id="StudentId" name="StudentId" required>
+                    </div>
+                </div>
+
+                <h5 class="mb-3">Subject Marks</h5>
+
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="bangla" class="form-label">Bangla</label>
+                        <input type="number" step="0.01" max="100" class="form-control" id="bangla" name="bangla" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="english" class="form-label">English</label>
+                        <input type="number" step="0.01" max="100" class="form-control" id="english" name="english" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="math" class="form-label">Math</label>
+                        <input type="number" step="0.01" max="100" class="form-control" id="math" name="math" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="biology" class="form-label">Biology</label>
+                        <input type="number" step="0.01" max="100" class="form-control" id="biology" name="biology" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="chemistry" class="form-label">Chemistry</label>
+                        <input type="number" step="0.01" max="100" class="form-control" id="chemistry" name="chemistry" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="physics" class="form-label">Physics</label>
+                        <input type="number" step="0.01" max="100" class="form-control" id="physics" name="physics" required>
+                    </div>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Submit Result</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

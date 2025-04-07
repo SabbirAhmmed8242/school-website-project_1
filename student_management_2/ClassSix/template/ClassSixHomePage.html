@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student & Teacher Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .border-box {
+            display: flex;
+            border: 3px solid #000;
+            width: 70%;
+            height: 70vh;
+        }
+        .section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .section h3 {
+            margin-bottom: 20px;
+        }
+        .btn {
+            margin-top: 10px;
+            width: 100%;
+        }
+        /* Remove border between student and teacher section */
+        .section:first-child {
+            border-right: none;
+        }
+        /* Remove border on outer sides, only center border visible */
+        .border-box {
+            border-left: none;
+            border-top: none;
+            border-right: none;
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="border-box">
+        <!-- Student Section -->
+        <div class="section">
+            <h3>Student</h3>
+            <a href="{% url 'StudentLogin' %}" class="btn btn-primary">Login</a>
+            <a href="{% url 'StudentReg' %}" class="btn btn-secondary">Register</a>
+        </div>
+
+        <!-- Teacher Section -->
+        <div class="section">
+            <h3>Teacher</h3>
+            <a href="{% url 'TeacherLoginSIX' %}" class="btn btn-primary">Login</a>
+            <a href="{% url 'TeacherRegSIX' %}" class="btn btn-secondary">Register</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

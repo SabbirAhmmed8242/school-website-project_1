@@ -1,0 +1,70 @@
+{% extends "TeacherNav.html" %}
+{% block title %}Teacher Dashboard{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center mb-4">Teacher Dashboard Menu</h2>
+    
+    <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+        <div class="col">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Add Result</h5>
+                    <p class="card-text">Submit results for your students.</p>
+                    <a href="{% url 'Addresult' %}" class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">View Result</h5>
+                    <p class="card-text">Check all student results.</p>
+                    <a href="" class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Add Student</h5>
+                    <p class="card-text">Register a new student.</p>
+                    <a href="" class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Delete Student</h5>
+                    <p class="card-text">Remove a student from the system.</p>
+                    <a href="" class="btn btn-danger">Go</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Update Student Info</h5>
+                    <p class="card-text">Edit student information.</p>
+                    <a href="" class="btn btn-warning">Go</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Logout</h5>
+                    <p class="card-text">Logout from your account.</p>
+                    <a href="" class="btn btn-secondary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

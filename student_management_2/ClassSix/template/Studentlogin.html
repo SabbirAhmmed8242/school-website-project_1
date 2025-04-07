@@ -1,0 +1,33 @@
+{% extends "StudentNav.html" %}
+{% block title %}Student Login{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <h3 class="text-center mb-4">Student Login</h3>
+
+            {% if err %}
+                <div class="alert alert-danger text-center">
+                    {{ err }}
+                </div>
+            {% endif %}
+
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="StudentId" class="form-label">Student ID</label>
+                    <input type="number" class="form-control" id="StudentId" name="StudentId" placeholder="Enter your student ID" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "TeacherNav.html" %}
+{% block title %}Login or Join as{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center mb-4">Login Join as Class Teacher</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Class SIX</h5>
+                    <p class="card-text">Click below to login as a class six class teacher</p>
+                    <a href="{% url 'TeacherLoginSIX' %}" class="btn btn-primary">Login to</a>
+                    <a href="{% url 'TeacherRegSIX' %}" class="btn btn-info">Join {{ cls }}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Class SEVEN</h5>
+                    <p class="card-text">Click below to login as a class SEVEN class teacher</p>
+                    <a href="{% url 'TeacherLoginSIX' %}" class="btn btn-primary">Login to {{ cls }}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Class EIGHT</h5>
+                    <p class="card-text">Click below to login as a class EIGHT class teacher</p>
+                    <a href="{% url 'TeacherLoginSIX' %}" class="btn btn-primary">Login to</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Class NINE</h5>
+                    <p class="card-text">Click below to login as a class NINE class teacher</p>
+                    <a href="{% url 'TeacherLoginSIX' %}" class="btn btn-primary">Login to {{ cls }}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Class TEN</h5>
+                    <p class="card-text">Click below to login as a class TEn class teacher</p>
+                    <a href="{% url 'TeacherLoginSIX' %}" class="btn btn-primary">Login to {{ cls }}</a>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">CANCEL</h5>
+                    <p class="card-text">Clicked by mistake go to HOME page</p>
+                    <a href="{% url 'home' %}" class="btn btn-primary">HOME</a>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}
